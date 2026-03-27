@@ -26,7 +26,11 @@ export class StudentService {
   }
 
   updateStudent(id: number, data: { name: string; age: number }) {
+    console.log(id, 'id');
+
     const student = this.students.find((st) => st.id === id);
+    console.log(student, 'rfrfrf');
+
     if (!student) {
       return new NotFoundException(`Student with id ${id} not found`);
     }
@@ -35,11 +39,16 @@ export class StudentService {
   }
 
   patchStudent(id: number, data: Partial<{ name: string; age: number }>) {
+    console.log(id);
+
     const student = this.getById(id);
+    console.log(student);
+
     if (!student) {
       return new NotFoundException('stundent not found');
     }
     Object.assign(student, data);
+    return student;
   }
 
   deleteStudent(id: number) {
