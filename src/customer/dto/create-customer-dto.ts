@@ -1,4 +1,4 @@
 export class CreateCustomerDto {
-  namee: string;
+  name: string;
   age: number;
 }
