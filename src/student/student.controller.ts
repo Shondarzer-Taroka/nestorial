@@ -33,8 +33,8 @@ export class StudentController {
     @Param('id') id: string,
     @Body() body: { name: string; age: number },
   ) {
-    console.log(body,'oooo');
-    
+    console.log(body, 'oooo');
+
     return this.studentService.updateStudent(Number(id), body);
   }
 
